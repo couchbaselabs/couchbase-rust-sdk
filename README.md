@@ -16,6 +16,17 @@ Make sure to have all [libcouchbase](https://docs.couchbase.com/c-sdk/current/st
 couchbase = "1.0.0-alpha.5"
 ```
 
+## Dependencies
+By default the library depends on:
+
+* _libevent_ (or _libev_) for the primary I/O backend.
+* _openssl_ for SSL transport.
+* Set the value of
+  `OPENSSL_ROOT_DIR` to the location of the installation path, as described
+  [here](https://github.com/Kitware/CMake/blob/master/Modules/FindOpenSSL.cmake)
+* Set the value of `PKG_CONFIG_PATH` 
+    For example: ```export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"```
+
 ## Building
 
 From the root of the repo:
