@@ -16,6 +16,26 @@ Make sure to have all [libcouchbase](https://docs.couchbase.com/c-sdk/current/st
 couchbase = "1.0.0-alpha.5"
 ```
 
+## Building
+
+From the root of the repo:
+```shell
+cargo build
+```
+
+## Testing
+
+### To run only Unit Tests
+From the root of the repo:
+```shell
+cargo test --lib
+```
+### To run only Integration Tests
+From the root of the repo:
+```shell
+cargo test --test '*'
+```
+
 ## Usage
 
 The `examples` folder has a bunch more, but here is a basic getting started doing a kv op:
