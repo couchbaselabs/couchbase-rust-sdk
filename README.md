@@ -19,13 +19,24 @@ couchbase = "1.0.0-alpha.5"
 ## Dependencies
 By default the library depends on:
 
-* _libevent_ (or _libev_) for the primary I/O backend.
 * _openssl_ for SSL transport.
+```shell
+brew update
+brew install openssl
+```
 * Set the value of
-  `OPENSSL_ROOT_DIR` to the location of the installation path, as described
-  [here](https://github.com/Kitware/CMake/blob/master/Modules/FindOpenSSL.cmake)
+  `OPENSSL_ROOT_DIR` to the location of the installation path
 * Set the value of `PKG_CONFIG_PATH` 
     For example: ```export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"```
+* Download the rustup installation program and use it to install Rust by running the following command:
+```shell
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+* Follow the prompts displayed to proceed with a default installation.
+* Update your current shell to include Cargo by running the following command:
+```shell
+source ~/.cargo/env
+```
 
 ## Building
 
