@@ -16,6 +16,48 @@ Make sure to have all [libcouchbase](https://docs.couchbase.com/c-sdk/current/st
 couchbase = "1.0.0-alpha.5"
 ```
 
+## Dependencies
+By default the library depends on:
+
+* _openssl_ for SSL transport.
+```shell
+brew update
+brew install openssl
+```
+* Set the value of
+  `OPENSSL_ROOT_DIR` to the location of the installation path
+* Set the value of `PKG_CONFIG_PATH` 
+    For example: ```export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"```
+* Download the rustup installation program and use it to install Rust by running the following command:
+```shell
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+* Follow the prompts displayed to proceed with a default installation.
+* Update your current shell to include Cargo by running the following command:
+```shell
+source ~/.cargo/env
+```
+
+## Building
+
+From the root of the repo:
+```shell
+cargo build
+```
+
+## Testing
+
+### To run only Unit Tests
+From the root of the repo:
+```shell
+cargo test --lib
+```
+### To run only Integration Tests
+From the root of the repo:
+```shell
+cargo test --test '*'
+```
+
 ## Usage
 
 The `examples` folder has a bunch more, but here is a basic getting started doing a kv op:
